@@ -26,12 +26,15 @@ public class MeuController {
 	@Value("${minha_propridade_super_legal}")
 	private String minhaPropriedadeSuperLegal;
 	
+	@Value("${movie}")
+	private String movie;
+	
 	@Autowired
     DatasourceConfig datasourceConfig;
 	
     @RequestMapping(value = "/{name}", method = RequestMethod.GET)
     public String hello(@PathVariable String name) {
-        String result="Hello "+name+"! activeProfile="+activeProfile+" minhaPropriedade="+minhaPropriedade+ " outraPropriedade="+outraPropriedade+" minhaPropriedadeSuperLegal="+minhaPropriedadeSuperLegal+" Datasource config="+datasourceConfig.setup();
+        String result="Hello "+name+"! activeProfile="+activeProfile+" minhaPropriedade="+minhaPropriedade+ " outraPropriedade="+outraPropriedade+" minhaPropriedadeSuperLegal="+minhaPropriedadeSuperLegal+" Datasource config="+datasourceConfig.setup()+" Movie="+movie;
         return result;
     }
 }
