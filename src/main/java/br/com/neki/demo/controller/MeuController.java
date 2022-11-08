@@ -17,9 +17,13 @@ public class MeuController {
 	@Value("${minha_propriedade_teste}")
 	private String minhaPropriedade;
 	
+	@Value("${outra_propriedade_teste}")
+	private String outraPropriedade;
+	
+	
     @RequestMapping(value = "/{name}", method = RequestMethod.GET)
     public String hello(@PathVariable String name) {
-        String result="Hello "+name+"! activeProfile="+activeProfile+" minhaPropriedade="+minhaPropriedade;
+        String result="Hello "+name+"! activeProfile="+activeProfile+" minhaPropriedade="+minhaPropriedade+ " outraPropriedade="+outraPropriedade;
         return result;
     }
 }
